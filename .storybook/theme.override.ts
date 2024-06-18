@@ -387,7 +387,6 @@ const customTheme = {
     MuiTypography: {
       styleOverrides: {
         root: {
-          fontSize: '18px',
           fontFamily: FONT_PALETTE.PRIMARY,
         },
       },
@@ -436,6 +435,9 @@ const customTheme = {
         li: {
           fontSize: '18px',
           fontWeight: 400,
+          '& p': {
+            fontSize: '18px',
+          },
         },
       },
     },
