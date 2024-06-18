@@ -39,7 +39,7 @@ enum COLOR_PALETTE {
   WARNING_LIGHT = '#F58220',
   GRAY = '#A6A6A6',
   LIGHT_GRAY = '#F6F6F6',
-  BOX_SHADOW = '#DFDFDF',
+  BOX_SHADOW = 'rgba(223, 223, 223,1)',
 }
 enum TEXT_PALETTE {
   PRIMARY = '#111111',
@@ -445,13 +445,13 @@ const customTheme = {
           fontFamily: FONT_PALETTE.PRIMARY,
 
           ':focus': {
-            boxShadow: COLOR_PALETTE.BOX_SHADOW,
+            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
           },
           ':active': {
-            boxShadow: COLOR_PALETTE.BOX_SHADOW,
+            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
           },
           ':hover': {
-            boxShadow: COLOR_PALETTE.BOX_SHADOW,
+            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
           },
         },
         sizeLarge: {
@@ -552,6 +552,13 @@ const customTheme = {
           },
         },
       ],
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          fontFamily: FONT_PALETTE.PRIMARY,
+        },
+      },
     },
   },
 }
