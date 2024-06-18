@@ -1,4 +1,10 @@
-import { createTheme, fontWeight, padding } from '@mui/system'
+import {
+  createTheme,
+  fontSize,
+  fontWeight,
+  lineHeight,
+  padding,
+} from '@mui/system'
 import { deepmerge } from '@mui/utils'
 import { theme } from '../src/theme'
 import createPalette from '@mui/material/styles/createPalette'
@@ -21,7 +27,7 @@ enum FONT_PALETTE {
   PRIMARY_SEMI_BOLD = `"Karbon", Arial, Sans-serif, Serif`,
   PRIMARY_LIGHT = `"Karbon", Arial, Sans-serif, Serif`,
 }
-enum COLOR_PALETTE {
+export enum COLOR_PALETTE {
   WHITE = '#ffffff',
   BLACK = '#000000',
   PRIMARY = '#D31184',
@@ -48,6 +54,18 @@ enum TEXT_PALETTE {
   QUATERNARY = '#A2A2A2',
 }
 
+enum COLOR_PALETTE_CHIP {
+  PENDING_MAIN = '#FFF6E5',
+  PENDING_CONTRASTTEXT = '#EA730B',
+  CONFIRMED_MAIN = '#DBEBB0',
+  CONFIRMED_CONTRASTTEXT = '#406124',
+  DECLINED_MAIN = '#F0D3CC',
+  DECLINED_CONTRASTTEXT = '#B62100',
+  INFO_MAIN = '#F0D3CC',
+  INFO_CONTRASTTEXT = '#B62100',
+  LABEL_MAIN = '#F0D3CC',
+  LABEL_CONTRASTTEXT = '#B62100',
+}
 const paletteDefinitions = {
   common: {
     white: '#ffffff',
@@ -212,14 +230,13 @@ const paletteDefinitions = {
     yellow: '#f5f9ee',
   },
 }
-
-const palette = createPalette(paletteDefinitions)
+const palette = createPalette(paletteDefinitions as any)
 
 export const typographyDefinitions = {
   fontWeight: 400,
   htmlFontSize: 16,
   allVariants: {
-    color: palette.text.primary,
+    color: TEXT_PALETTE.PRIMARY,
   },
   h1: {
     fontFamily: getFontFamily('Karbon'),
@@ -319,42 +336,45 @@ export const typographyDefinitions = {
     fontSize: 12,
     lineHeight: '130%',
     letterSpacing: 0,
-    color: palette.text.secondary,
+    color: TEXT_PALETTE.SECONDARY,
   },
   caption1: {
     fontWeight: 400,
     fontSize: 20,
     lineHeight: '130%',
     letterSpacing: 0,
-    color: palette.text.tertiary,
+    color: TEXT_PALETTE.TERTIARY,
   },
   caption2: {
     fontWeight: 400,
     fontSize: 16,
     lineHeight: '130%',
     letterSpacing: 0,
-    color: palette.text.tertiary,
+    color: TEXT_PALETTE.TERTIARY,
   },
   caption3: {
     fontWeight: 400,
     fontSize: 14,
     lineHeight: '130%',
     letterSpacing: 0,
-    color: palette.text.tertiary,
+    color: TEXT_PALETTE.TERTIARY,
   },
   helper: {
     fontWeight: 400,
     fontSize: 12,
     lineHeight: '130%',
     letterSpacing: 0,
-    color: palette.text.tertiary,
+    color: TEXT_PALETTE.TERTIARY,
   },
   button: {
     fontSize: 16,
     lineHeight: 24 / 16,
   },
 }
-const typography = createTypography(palette, typographyDefinitions)
+const typography = createTypography(
+  palette as any,
+  typographyDefinitions as any
+)
 
 const customTheme = {
   palette,
@@ -420,13 +440,7 @@ const customTheme = {
         disableRipple: true,
       },
     },
-    MuiSvgIcon: {
-      styleOverrides: {
-        root: {
-          // color: COLOR_PALETTE.SECONDARY,
-        },
-      },
-    },
+
     MuiCircularProgress: {
       styleOverrides: {
         circle: {
@@ -562,6 +576,7 @@ const customTheme = {
       styleOverrides: {
         root: {
           fontFamily: FONT_PALETTE.PRIMARY,
+          lineHeight: '140%',
         },
       },
     },
@@ -581,8 +596,8 @@ const customTheme = {
             color: 'pending',
           },
           style: {
-            backgroundColor: palette.pending.main,
-            color: palette.pending.contrastText,
+            backgroundColor: COLOR_PALETTE_CHIP.PENDING_MAIN,
+            color: COLOR_PALETTE_CHIP.PENDING_CONTRASTTEXT,
           },
         },
         {
@@ -590,8 +605,8 @@ const customTheme = {
             color: 'confirmed',
           },
           style: {
-            backgroundColor: palette.confirmed.main,
-            color: palette.confirmed.contrastText,
+            backgroundColor: COLOR_PALETTE_CHIP.CONFIRMED_MAIN,
+            color: COLOR_PALETTE_CHIP.CONFIRMED_CONTRASTTEXT,
           },
         },
         {
@@ -599,8 +614,8 @@ const customTheme = {
             color: 'declined',
           },
           style: {
-            backgroundColor: palette.declined.main,
-            color: palette.declined.contrastText,
+            backgroundColor: COLOR_PALETTE_CHIP.DECLINED_MAIN,
+            color: COLOR_PALETTE_CHIP.DECLINED_CONTRASTTEXT,
           },
         },
         {
@@ -608,8 +623,8 @@ const customTheme = {
             color: 'info',
           },
           style: {
-            backgroundColor: palette.info.main,
-            color: palette.info.contrastText,
+            backgroundColor: COLOR_PALETTE_CHIP.INFO_MAIN,
+            color: COLOR_PALETTE_CHIP.INFO_CONTRASTTEXT,
           },
         },
         {
@@ -617,8 +632,8 @@ const customTheme = {
             color: 'label',
           },
           style: {
-            backgroundColor: palette.label.main,
-            color: palette.label.contrastText,
+            backgroundColor: COLOR_PALETTE_CHIP.LABEL_MAIN,
+            color: COLOR_PALETTE_CHIP.LABEL_CONTRASTTEXT,
           },
         },
       ],
