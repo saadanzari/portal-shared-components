@@ -380,6 +380,11 @@ const customTheme = {
           fontFamily: FONT_PALETTE.PRIMARY,
           fontSize: '18px',
           fontWeight: 400,
+          color: COLOR_PALETTE.PRIMARY,
+
+          ':hover': {
+            color: COLOR_PALETTE.PRIMARY_HOVER,
+          },
         },
       },
     },
@@ -557,6 +562,22 @@ const customTheme = {
       styleOverrides: {
         root: {
           fontFamily: FONT_PALETTE.PRIMARY,
+        },
+      },
+    },
+    MuiDataGrid: {
+      styleOverrides: {
+        columnHeaderTitle: {
+          fontSize: 16,
+          fontFamily: FONT_PALETTE.PRIMARY,
+        },
+        cell: {
+          fontSize: 16,
+        },
+        root: {
+          '& .MuiTypography-root a': {
+            fontSize: 16,
+          },
         },
       },
     },
