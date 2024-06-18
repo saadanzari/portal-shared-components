@@ -17,14 +17,15 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+import React from 'react'
 import { SharedThemeProvider } from '../src/components/basic/SharedThemeProvider'
 import { SharedCssBaseline } from '../src/components/basic/SharedCssBaseline'
-import React from 'react'
-import { theme } from '../src/theme'
+
+import { finalTheme } from './theme.override'
 
 const withTheme = (Story) => {
   return (
-    <SharedThemeProvider>
+    <SharedThemeProvider themeDesign={finalTheme}>
       <SharedCssBaseline />
       <Story />
     </SharedThemeProvider>
