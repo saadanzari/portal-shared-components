@@ -398,6 +398,15 @@ const customTheme = {
         },
       },
     },
+
+    MuiCheckbox: {
+      styleOverrides: {
+        disabled: {
+          color: COLOR_PALETTE.BLACK,
+          backgroundColor: COLOR_PALETTE.BLACK,
+        },
+      },
+    },
     MuiLink: {
       styleOverrides: {
         root: {
@@ -498,6 +507,10 @@ const customTheme = {
             borderColor: COLOR_PALETTE.SECONDARY_HOVER,
             borderWidth: 2,
             backgroundColor: 'transparent',
+          },
+          ':disabled': {
+            borderColor: COLOR_PALETTE.LIGHT_GRAY,
+            borderWidth: 2,
           },
         },
 
