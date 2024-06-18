@@ -35,14 +35,18 @@ export enum COLOR_PALETTE {
   SECONDARY = '#4D4D4D',
   SECONDARY_HOVER = '#333333',
   SUCCESS = '#6BA13C',
-  SUCCESS_LIGHT = '#6BA13C',
+  SUCCESS_LIGHT = '#DBEBB0',
+  SUCCESS_DARK = '#406124',
   ERROR = '#B62100',
-  ERROR_LIGHT = '#B62100',
+  ERROR_LIGHT = '#F0D3CC',
+  ERROR_DARK = '#6D1400',
 
   INFO = '#0F71CB',
-  INFO_LIGHT = '#0D55AF',
+  INFO_LIGHT = '#EAF1FE',
+  INFO_DARK = '#0D55AF',
   WARNING = '#F58220',
-  WARNING_LIGHT = '#F58220',
+  WARNING_LIGHT = 'rgba(245, 130, 32, 0.15)',
+  WARNING_DARK = '#B95B09',
   GRAY = '#A6A6A6',
   LIGHT_GRAY = '#F6F6F6',
   BOX_SHADOW = 'rgba(223, 223, 223,1)',
@@ -508,6 +512,8 @@ const customTheme = {
             backgroundColor: COLOR_PALETTE.LIGHT_GRAY,
           },
         },
+
+        ':hover': {},
       },
       variants: [
         {
@@ -515,7 +521,64 @@ const customTheme = {
             color: 'secondary',
           },
           style: {
-            ':hover': {},
+            color: COLOR_PALETTE.WHITE,
+            backgroundColor: COLOR_PALETTE.SECONDARY,
+            ':hover': {
+              color: COLOR_PALETTE.WHITE,
+              backgroundColor: COLOR_PALETTE.BLACK,
+            },
+          },
+        },
+        {
+          props: {
+            color: 'success',
+          },
+          style: {
+            color: COLOR_PALETTE.WHITE,
+            backgroundColor: COLOR_PALETTE.SUCCESS,
+            ':hover': {
+              color: COLOR_PALETTE.WHITE,
+              backgroundColor: COLOR_PALETTE.SUCCESS_DARK,
+            },
+          },
+        },
+        {
+          props: {
+            color: 'info',
+          },
+          style: {
+            color: COLOR_PALETTE.WHITE,
+            backgroundColor: COLOR_PALETTE.INFO,
+            ':hover': {
+              color: COLOR_PALETTE.WHITE,
+              backgroundColor: COLOR_PALETTE.INFO_DARK,
+            },
+          },
+        },
+        {
+          props: {
+            color: 'warning',
+          },
+          style: {
+            color: COLOR_PALETTE.WHITE,
+            backgroundColor: COLOR_PALETTE.WARNING,
+            ':hover': {
+              color: COLOR_PALETTE.WHITE,
+              backgroundColor: COLOR_PALETTE.WARNING_DARK,
+            },
+          },
+        },
+        {
+          props: {
+            color: 'error',
+          },
+          style: {
+            color: COLOR_PALETTE.WHITE,
+            backgroundColor: COLOR_PALETTE.ERROR,
+            ':hover': {
+              color: COLOR_PALETTE.WHITE,
+              backgroundColor: COLOR_PALETTE.ERROR_DARK,
+            },
           },
         },
       ],
