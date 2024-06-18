@@ -1,4 +1,4 @@
-import { createTheme, fontWeight } from '@mui/system'
+import { createTheme, fontWeight, padding } from '@mui/system'
 import { deepmerge } from '@mui/utils'
 import { theme } from '../src/theme'
 import createPalette from '@mui/material/styles/createPalette'
@@ -189,20 +189,20 @@ const paletteDefinitions = {
     active: 'rgba(15, 113, 203, 0.2)',
   },
   pending: {
-    main: '#FFECBD',
-    contrastText: '#975B27',
+    main: '#FFF6E5',
+    contrastText: '#EA730B',
   },
   confirmed: {
-    main: '#E2F6C7',
-    contrastText: '#5C8D45',
+    main: '#DBEBB0',
+    contrastText: '#406124',
   },
   declined: {
-    main: '#FEE7E2',
-    contrastText: '#FF532F',
+    main: '#F0D3CC',
+    contrastText: '#B62100',
   },
   label: {
-    main: '#F2F3FB',
-    contrastText: '#676BC6',
+    main: '#DFDFDF',
+    contrastText: '#000000',
   },
 
   buttons: {
@@ -564,6 +564,64 @@ const customTheme = {
           fontFamily: FONT_PALETTE.PRIMARY,
         },
       },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          borderRadius: 6,
+        },
+        label: {
+          fontWeight: 500,
+          padding: '6px 12px',
+        },
+      },
+      variants: [
+        {
+          props: {
+            color: 'pending',
+          },
+          style: {
+            backgroundColor: palette.pending.main,
+            color: palette.pending.contrastText,
+          },
+        },
+        {
+          props: {
+            color: 'confirmed',
+          },
+          style: {
+            backgroundColor: palette.confirmed.main,
+            color: palette.confirmed.contrastText,
+          },
+        },
+        {
+          props: {
+            color: 'declined',
+          },
+          style: {
+            backgroundColor: palette.declined.main,
+            color: palette.declined.contrastText,
+          },
+        },
+        {
+          props: {
+            color: 'info',
+          },
+          style: {
+            backgroundColor: palette.info.main,
+            color: palette.info.contrastText,
+          },
+        },
+        {
+          props: {
+            color: 'label',
+          },
+          style: {
+            backgroundColor: palette.label.main,
+            color: palette.label.contrastText,
+          },
+        },
+      ],
     },
     MuiDataGrid: {
       styleOverrides: {
