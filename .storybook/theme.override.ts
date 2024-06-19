@@ -209,8 +209,8 @@ const paletteDefinitions = {
   },
   selected: {
     hover: '#EDEDED',
-    focus: 'rgba(15, 113, 203, 0.15)',
-    active: 'rgba(15, 113, 203, 0.2)',
+    focus: 'rgba(128, 128, 128, .2)',
+    active: 'rgba(128, 128, 128, .3)',
   },
   pending: {
     main: '#FFF6E5',
@@ -332,7 +332,7 @@ export const typographyDefinitions = {
   label4: {
     fontFamily: getFontFamily('Karbon'),
     fontWeight: 500,
-    fontSize: 12,
+    fontSize: 14, // changed from 12 to 14 to match styles
     lineHeight: '130%',
     letterSpacing: 0,
   },
@@ -390,6 +390,24 @@ const customTheme = {
       styleOverrides: {
         root: {
           fontFamily: FONT_PALETTE.PRIMARY,
+        },
+        caption3: {
+          fontSize: '20px',
+          fontWeight: 600,
+          lineHeight: '24px',
+          color: `${COLOR_PALETTE.PRIMARY} !important`,
+        },
+      },
+    },
+    MuiCollapse: {
+      styleOverrides: {
+        vertical: {
+          '& .MuiTypography-caption3': {
+            fontSize: '20px',
+            fontWeight: 400,
+            lineHeight: '140%',
+            color: `${COLOR_PALETTE.SECONDARY} !important`,
+          },
         },
       },
     },
@@ -874,6 +892,22 @@ const customTheme = {
         expandIconWrapper: {
           '& .MuiSvgIcon-root': {
             color: COLOR_PALETTE.SECONDARY,
+          },
+        },
+      },
+    },
+    MuiBox: {
+      styleOverrides: {
+        root: {
+          '&.errorBar': {
+            color: COLOR_PALETTE.ERROR,
+          },
+          '&.errorBar .iconWithText': {
+            color: COLOR_PALETTE.ERROR,
+          },
+          '&.errorBar .iconWithText p': {
+            fontSize: '18px',
+            fontWeight: '500',
           },
         },
       },
