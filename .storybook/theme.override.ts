@@ -208,7 +208,7 @@ const paletteDefinitions = {
     accent12: '#2B4078',
   },
   selected: {
-    hover: 'rgba(15, 113, 203, 0.05)',
+    hover: '#EDEDED',
     focus: 'rgba(15, 113, 203, 0.15)',
     active: 'rgba(15, 113, 203, 0.2)',
   },
@@ -817,6 +817,16 @@ const customTheme = {
               background: 'none',
               border: 'none',
             },
+        },
+      },
+    },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          '& .MuiMenuItem-root': {
+            fontWeight: 500,
+            padding: '14px 14px',
+          },
         },
       },
     },
