@@ -688,6 +688,16 @@ const customTheme = {
         },
       },
     },
+    MuiDialog: {
+      styleOverrides: {
+        root: {
+          '& .actions-main': {
+            backgroundColor: COLOR_PALETTE.LIGHT_GRAY,
+            borderColor: COLOR_PALETTE.LIGHT_GRAY,
+          },
+        },
+      },
+    },
     MuiChip: {
       defaultProps: {
         disableRipple: true,
