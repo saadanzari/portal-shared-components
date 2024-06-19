@@ -406,11 +406,11 @@ const customTheme = {
           fontFamily: FONT_PALETTE.PRIMARY,
           '&.MuiTextField-root .MuiAutocomplete-endAdornment .MuiAutocomplete-popupIndicator':
             {
-              color: '#4D4D4D',
+              color: COLOR_PALETTE.SECONDARY,
             },
           '&.MuiTextField-root .MuiAutocomplete-endAdornment .MuiSvgIcon-root':
             {
-              color: '#4D4D4D',
+              color: COLOR_PALETTE.SECONDARY,
             },
           '&.MuiTextField-root .MuiAutocomplete-endAdornment .MuiIconButton-root':
             {
@@ -689,6 +689,10 @@ const customTheme = {
       },
     },
     MuiChip: {
+      defaultProps: {
+        disableRipple: true,
+        disableAnimation: true,
+      },
       styleOverrides: {
         root: {
           borderRadius: 6,
@@ -744,8 +748,8 @@ const customTheme = {
             color: 'label',
           },
           style: {
-            backgroundColor: COLOR_PALETTE_CHIP.LABEL_MAIN,
-            color: COLOR_PALETTE_CHIP.LABEL_CONTRASTTEXT,
+            backgroundColor: COLOR_PALETTE_CHIP.LABEL_CONTRASTTEXT,
+            color: COLOR_PALETTE_CHIP.LABEL_MAIN,
           },
         },
       ],
@@ -813,7 +817,7 @@ const customTheme = {
           backgroundColor: '#d2d2d2',
         },
         bar: {
-          backgroundColor: '#4d4d4d',
+          backgroundColor: COLOR_PALETTE.SECONDARY,
         },
       },
     },
