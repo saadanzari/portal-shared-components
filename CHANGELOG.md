@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.0.23
+
+- Improve visibility of scroll to top button
+
+## 3.0.22
+
+- Improve pre-commit hook reduce dependencies and add unit tests
+
+## 3.0.21
+
+- Add scroll to top button specific css
+
+## 3.0.20
+
+- Update Font Size for Table Contents
+
 ## 3.0.19
 
 - Add pre-commit hook with lint-staged and prettier
