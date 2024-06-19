@@ -487,6 +487,10 @@ const customTheme = {
           ':hover': {
             boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
           },
+          '& .MuiButton-icon .MuiCircularProgress-root .MuiCircularProgress-circle':
+            {
+              color: COLOR_PALETTE.WHITE,
+            },
         },
         sizeLarge: {
           padding: '14px 40px',
