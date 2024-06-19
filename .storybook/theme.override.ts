@@ -400,6 +400,25 @@ const customTheme = {
         },
       },
     },
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          fontFamily: FONT_PALETTE.PRIMARY,
+          '&.MuiTextField-root .MuiAutocomplete-endAdornment .MuiAutocomplete-popupIndicator':
+            {
+              color: '#4D4D4D',
+            },
+          '&.MuiTextField-root .MuiAutocomplete-endAdornment .MuiSvgIcon-root':
+            {
+              color: '#4D4D4D',
+            },
+          '&.MuiTextField-root .MuiAutocomplete-endAdornment .MuiIconButton-root':
+            {
+              backgroundColor: 'transparent !important',
+            },
+        },
+      },
+    },
 
     MuiCheckbox: {
       styleOverrides: {
