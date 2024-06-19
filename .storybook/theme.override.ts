@@ -1,5 +1,6 @@
 import {
   borderColor,
+  borderRadius,
   createTheme,
   fontSize,
   fontWeight,
@@ -844,6 +845,30 @@ const customTheme = {
           '& .MuiMenuItem-root': {
             fontWeight: 500,
             padding: '14px 14px',
+          },
+          '& .MuiListItem-root': {
+            // padding: 0,
+          },
+          '& .MuiListItem-root a': {
+            fontWeight: 500,
+            fontSize: '16px',
+            borderRadius: 0,
+            color: COLOR_PALETTE.BLACK,
+          },
+          '& .MuiListItem-root:hover a': {
+            color: COLOR_PALETTE.BLACK,
+          },
+        },
+        padding: {
+          margin: '10px 0',
+        },
+      },
+    },
+    MuiAvatar: {
+      styleOverrides: {
+        root: {
+          '&.MuiAvatar-circular.MuiAvatar-colorDefault': {
+            backgroundColor: COLOR_PALETTE.SECONDARY,
           },
         },
       },
