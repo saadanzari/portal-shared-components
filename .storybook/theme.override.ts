@@ -65,10 +65,10 @@ enum COLOR_PALETTE_CHIP {
   CONFIRMED_CONTRASTTEXT = '#406124',
   DECLINED_MAIN = '#F0D3CC',
   DECLINED_CONTRASTTEXT = '#B62100',
-  INFO_MAIN = '#F0D3CC',
-  INFO_CONTRASTTEXT = '#B62100',
-  LABEL_MAIN = '#F0D3CC',
-  LABEL_CONTRASTTEXT = '#B62100',
+  INFO_MAIN = '#EAF1FE ',
+  INFO_CONTRASTTEXT = '#0F71CB',
+  LABEL_MAIN = '#DFDFDF',
+  LABEL_CONTRASTTEXT = '#000000',
 }
 const paletteDefinitions = {
   common: {
@@ -663,10 +663,14 @@ const customTheme = {
       styleOverrides: {
         root: {
           borderRadius: 6,
+          height: '37px',
         },
         label: {
           fontWeight: 500,
+          fontFamily: FONT_PALETTE.PRIMARY,
+          fontSize: '18px',
           padding: '6px 12px',
+          lineHeight: '140%',
         },
       },
       variants: [
@@ -730,6 +734,16 @@ const customTheme = {
           '& .MuiTypography-root a': {
             fontSize: 16,
           },
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          fontSize: 16,
+        },
+        input: {
+          fontSize: 16,
         },
       },
     },
