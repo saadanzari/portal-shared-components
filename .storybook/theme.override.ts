@@ -1,13 +1,4 @@
-import {
-  borderColor,
-  borderRadius,
-  createTheme,
-  fontSize,
-  fontWeight,
-  height,
-  lineHeight,
-  padding,
-} from '@mui/system'
+import { createTheme } from '@mui/system'
 import { deepmerge } from '@mui/utils'
 import { theme } from '../src/theme'
 import createPalette from '@mui/material/styles/createPalette'
