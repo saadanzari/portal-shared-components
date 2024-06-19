@@ -457,13 +457,6 @@ const customTheme = {
       },
     },
 
-    MuiCircularProgress: {
-      styleOverrides: {
-        circle: {
-          color: COLOR_PALETTE.WHITE,
-        },
-      },
-    },
     MuiCustomAccordion: {
       styleOverrides: {
         titleIcon: {
@@ -754,6 +747,13 @@ const customTheme = {
         },
         bar: {
           backgroundColor: '#4d4d4d',
+        },
+      },
+    },
+    MuiCircularProgress: {
+      styleOverrides: {
+        circle: {
+          color: COLOR_PALETTE.PRIMARY,
         },
       },
     },
