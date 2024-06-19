@@ -1,7 +1,9 @@
 import {
+  borderColor,
   createTheme,
   fontSize,
   fontWeight,
+  height,
   lineHeight,
   padding,
 } from '@mui/system'
@@ -474,9 +476,13 @@ const customTheme = {
 
           ':focus': {
             boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
+            color: COLOR_PALETTE.WHITE,
+            backgroundColor: COLOR_PALETTE.SECONDARY,
           },
           ':active': {
             boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
+            color: COLOR_PALETTE.WHITE,
+            backgroundColor: COLOR_PALETTE.SECONDARY,
           },
           ':hover': {
             boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
@@ -599,6 +605,13 @@ const customTheme = {
           ':hover': {
             backgroundColor: COLOR_PALETTE.BLACK,
             color: COLOR_PALETTE.WHITE,
+            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
+          },
+          ':focus': {
+            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
+          },
+          ':active': {
+            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
           },
         },
       },
@@ -740,6 +753,37 @@ const customTheme = {
         },
       },
     },
+    MuiFilledInput: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#FAFAFA',
+          '&:after': {
+            backgroundColor: COLOR_PALETTE.GRAY,
+            borderColor: COLOR_PALETTE.GRAY,
+          },
+          '&.Mui-focused:after': {
+            backgroundColor: COLOR_PALETTE.GRAY,
+            borderColor: COLOR_PALETTE.GRAY,
+          },
+        },
+      },
+    },
+
+    MuiInputAdornment: {
+      styleOverrides: {
+        root: {
+          '&:hover .MuiSvgIcon-root': {
+            color: COLOR_PALETTE.PRIMARY,
+          },
+          '&:hover .MuiButtonBase-root, &:active .MuiButtonBase-root,&:focus .MuiButtonBase-root':
+            {
+              background: 'none',
+              border: 'none',
+            },
+        },
+      },
+    },
+
     MuiLinearProgress: {
       styleOverrides: {
         root: {
@@ -754,6 +798,36 @@ const customTheme = {
       styleOverrides: {
         circle: {
           color: COLOR_PALETTE.PRIMARY,
+        },
+      },
+    },
+
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          minHeight: '40px',
+          fontFamily: FONT_PALETTE.PRIMARY,
+          '&.Mui-expanded': {
+            minHeight: '40px',
+          },
+        },
+        content: {
+          margin: '12px 0 12px',
+          fontSize: '20px',
+          overflow: 'hidden',
+          height: '24px',
+          '& .MuiSvgIcon-root': {
+            color: COLOR_PALETTE.SECONDARY,
+          },
+          '&.Mui-expanded': {
+            margin: '12px 0 12px',
+            padding: 0,
+          },
+        },
+        expandIconWrapper: {
+          '& .MuiSvgIcon-root': {
+            color: COLOR_PALETTE.SECONDARY,
+          },
         },
       },
     },
