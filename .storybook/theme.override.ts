@@ -89,7 +89,7 @@ const paletteDefinitions = {
     contrastText: COLOR_PALETTE.WHITE,
   },
   brand: {
-    brand01: '#FFA600',
+    brand01: COLOR_PALETTE.PRIMARY,
     brand02: '#B3CB2D',
   },
   action: {
@@ -110,23 +110,23 @@ const paletteDefinitions = {
   },
   success: {
     main: COLOR_PALETTE.SUCCESS,
-    dark: '#406124',
+    dark: COLOR_PALETTE.SUCCESS_DARK,
     light: COLOR_PALETTE.SUCCESS_LIGHT,
   },
   error: {
     main: COLOR_PALETTE.ERROR,
-    dark: '#406124',
+    dark: COLOR_PALETTE.ERROR_DARK,
     light: COLOR_PALETTE.ERROR_LIGHT,
   },
   info: {
     main: COLOR_PALETTE.INFO,
-    dark: '#406124',
+    dark: COLOR_PALETTE.INFO_DARK,
     light: COLOR_PALETTE.INFO_LIGHT,
     contrastText: COLOR_PALETTE.BLACK,
   },
   warning: {
     main: COLOR_PALETTE.WARNING,
-    dark: '#406124',
+    dark: COLOR_PALETTE.WARNING_DARK,
     light: COLOR_PALETTE.WARNING_LIGHT,
     contrastText: COLOR_PALETTE.WHITE,
   },
