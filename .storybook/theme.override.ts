@@ -252,14 +252,14 @@ export const typographyDefinitions = {
   },
   h3: {
     fontFamily: getFontFamily('Karbon'),
-    fontWeight: 600,
+    fontWeight: 500,
     fontSize: 40,
     lineHeight: '110%',
     letterSpacing: 0,
   },
   h4: {
     fontFamily: getFontFamily('Karbon'),
-    fontWeight: 600,
+    fontWeight: 500,
     fontSize: 36,
     lineHeight: '110%',
     letterSpacing: 0,
@@ -717,6 +717,7 @@ const customTheme = {
         root: {
           borderRadius: 6,
           height: '37px',
+          marginBottom: '10px',
         },
         label: {
           fontWeight: 500,
@@ -784,6 +785,7 @@ const customTheme = {
           fontSize: 16,
         },
         root: {
+          borderRadius: 0,
           '& .MuiTypography-root a': {
             fontSize: 16,
           },
