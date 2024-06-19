@@ -747,6 +747,16 @@ const customTheme = {
         },
       },
     },
+    MuiLinearProgress: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#d2d2d2',
+        },
+        bar: {
+          backgroundColor: '#4d4d4d',
+        },
+      },
+    },
   },
 }
 export const finalTheme = createTheme(
