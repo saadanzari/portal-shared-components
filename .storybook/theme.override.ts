@@ -865,6 +865,12 @@ const customTheme = {
       styleOverrides: {
         root: {
           fontSize: 16,
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            border: `1px solid ${COLOR_PALETTE.SECONDARY}`,
+          },
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            border: `2px solid ${COLOR_PALETTE.SECONDARY}`,
+          },
         },
       },
     },
@@ -874,13 +880,16 @@ const customTheme = {
         root: {
           backgroundColor: '#FAFAFA',
           fontSize: 20,
+          '&:before': {
+            borderColor: COLOR_PALETTE.GRAY,
+          },
           '&:after': {
             backgroundColor: COLOR_PALETTE.GRAY,
             borderColor: COLOR_PALETTE.GRAY,
           },
           '&.Mui-focused:after': {
-            backgroundColor: COLOR_PALETTE.GRAY,
-            borderColor: COLOR_PALETTE.GRAY,
+            backgroundColor: COLOR_PALETTE.SECONDARY,
+            borderColor: COLOR_PALETTE.SECONDARY,
           },
         },
         input: {
