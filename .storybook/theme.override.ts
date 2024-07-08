@@ -194,8 +194,8 @@ const paletteDefinitions = {
   },
   accent: {
     accent01: '#4D73D5',
-    accent02: '#F2F3FB',
-    accent03: '#676BC6',
+    accent02: '#EDEDED',
+    accent03: COLOR_PALETTE.SECONDARY_HOVER,
     accent04: '#E1F1FF',
     accent05: '#FFEBCC',
     accent06: '#5E3416',
@@ -421,6 +421,14 @@ const customTheme = {
       styleOverrides: {
         root: {
           fontFamily: FONT_PALETTE.PRIMARY,
+          '&.MuiTextField-root .MuiAutocomplete-tag': {
+            color: COLOR_PALETTE.SECONDARY,
+            height: '32px',
+          },
+          '&.MuiTextField-root .MuiAutocomplete-tag .MuiChip-label': {
+            fontWeight: 500,
+            fontSize: '16px !important',
+          },
           '&.MuiTextField-root .MuiAutocomplete-endAdornment .MuiAutocomplete-popupIndicator':
             {
               color: COLOR_PALETTE.SECONDARY,
