@@ -465,7 +465,7 @@ const customTheme = {
           color: COLOR_PALETTE.PRIMARY,
 
           ':hover': {
-            color: COLOR_PALETTE.PRIMARY_HOVER,
+            color: COLOR_PALETTE.BLACK,
           },
         },
       },
@@ -477,9 +477,23 @@ const customTheme = {
           fontFamily: FONT_PALETTE.PRIMARY,
           fontSize: '20px',
           fontWeight: 400,
+          '&.MuiAlert-colorError': {
+            background: COLOR_PALETTE.ERROR_LIGHT,
+          },
+          '&.MuiAlert-colorWarning': {
+            background: COLOR_PALETTE.WARNING_LIGHT,
+          },
+          '&.MuiAlert-colorInfo': {
+            background: COLOR_PALETTE.INFO_LIGHT,
+          },
+          '&.MuiAlert-colorSuccess': {
+            background: COLOR_PALETTE.SUCCESS_LIGHT,
+          },
         },
+
         message: {
           padding: '3px 0',
+          color: `${COLOR_PALETTE.BLACK} !important`,
         },
       },
     },
@@ -504,6 +518,13 @@ const customTheme = {
       defaultProps: {
         disableRipple: true,
       },
+      styleOverrides: {
+        root: {
+          '&.Mui-disabled': {
+            background: `${COLOR_PALETTE.GRAY} !important`,
+          },
+        },
+      },
     },
 
     MuiCustomAccordion: {
@@ -524,23 +545,36 @@ const customTheme = {
             background: COLOR_PALETTE.GRAY,
           },
           ':focus': {
-            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
+            boxShadow: `0px 0px 0px 2px ${COLOR_PALETTE.BOX_SHADOW}`,
             color: COLOR_PALETTE.WHITE,
             backgroundColor: COLOR_PALETTE.SECONDARY,
           },
           ':active': {
-            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
+            boxShadow: `0px 0px 0px 2px ${COLOR_PALETTE.BOX_SHADOW}`,
             color: COLOR_PALETTE.WHITE,
             backgroundColor: COLOR_PALETTE.SECONDARY,
           },
           ':hover': {
-            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
+            // boxShadow: `0px 0px 0px 2px ${COLOR_PALETTE.BOX_SHADOW}`,
           },
 
           '& .MuiButton-icon .MuiCircularProgress-root .MuiCircularProgress-circle':
             {
               color: COLOR_PALETTE.WHITE,
             },
+          // '&.MuiButton-outlined': {
+          //   backgroundColor: COLOR_PALETTE.PRIMARY,
+          //   color: COLOR_PALETTE.WHITE,
+          // },
+          // '&.MuiButton-outlined:hover': {
+          //   backgroundColor: COLOR_PALETTE.PRIMARY_HOVER,
+          //   color: COLOR_PALETTE.WHITE,
+          // },
+          // '&.MuiButton-contained': {
+          //   color: COLOR_PALETTE.SECONDARY,
+          //   backgroundColor: COLOR_PALETTE.WHITE,
+          //   borderColor: `${COLOR_PALETTE.SECONDARY} !important`,
+          // },
         },
         sizeLarge: {
           padding: '14px 40px',
@@ -597,6 +631,7 @@ const customTheme = {
             },
           },
         },
+
         {
           props: {
             color: 'success',
@@ -659,13 +694,13 @@ const customTheme = {
           ':hover': {
             backgroundColor: COLOR_PALETTE.BLACK,
             color: COLOR_PALETTE.WHITE,
-            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
+            // boxShadow: `0px 0px 0px 2px ${COLOR_PALETTE.BOX_SHADOW}`,
           },
           ':focus': {
-            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
+            boxShadow: `0px 0px 0px 2px ${COLOR_PALETTE.BOX_SHADOW}`,
           },
           ':active': {
-            boxShadow: `0px 0px 0px 3px ${COLOR_PALETTE.BOX_SHADOW}`,
+            boxShadow: `0px 0px 0px 2px ${COLOR_PALETTE.BOX_SHADOW}`,
           },
         },
       },
@@ -677,7 +712,7 @@ const customTheme = {
           style: {
             borderColor: COLOR_PALETTE.SECONDARY,
             color: COLOR_PALETTE.WHITE,
-            backgroundColor: COLOR_PALETTE.SECONDARY_HOVER,
+            backgroundColor: COLOR_PALETTE.SECONDARY,
             ':hover, :focus, :active': {
               backgroundColor: COLOR_PALETTE.BLACK,
               color: COLOR_PALETTE.WHITE,
@@ -692,7 +727,7 @@ const customTheme = {
           style: {
             borderColor: COLOR_PALETTE.SECONDARY,
             color: COLOR_PALETTE.SECONDARY,
-            backgroundColor: COLOR_PALETTE.LIGHT_GRAY,
+            backgroundColor: COLOR_PALETTE.WHITE,
             ':hover, :focus, :active': {
               borderColor: COLOR_PALETTE.GRAY,
               color: COLOR_PALETTE.SECONDARY,
