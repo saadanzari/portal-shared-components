@@ -141,7 +141,7 @@ const paletteDefinitions = {
     border01: '#DCDCDC',
     border02: '#B6B6B6',
     border03: '#989898',
-    border04: '#0F71CB',
+    border04: COLOR_PALETTE.INFO,
   },
   chip: {
     release: '#0D61AE',
@@ -173,7 +173,7 @@ const paletteDefinitions = {
     background06: '#FFF7EC',
     background07: '#F5F5F5',
     background08: '#FFF6FF',
-    background09: '#EDF0F4',
+    background09: COLOR_PALETTE.LIGHT_GRAY,
     background10: '#303030F2',
     background11: '#EDEFF2',
     background12: '#8E8E8E1A',
@@ -395,6 +395,9 @@ const customTheme = {
           fontWeight: 600,
           lineHeight: '24px',
           color: `${COLOR_PALETTE.PRIMARY} !important`,
+        },
+        helper: {
+          color: `${COLOR_PALETTE.BLACK} !important`,
         },
       },
     },
@@ -888,6 +891,7 @@ const customTheme = {
         root: {
           backgroundColor: '#FAFAFA',
           fontSize: 20,
+          paddingRight: '20px',
           '&:before': {
             borderColor: COLOR_PALETTE.GRAY,
           },
@@ -898,6 +902,20 @@ const customTheme = {
           '&.Mui-focused:after': {
             backgroundColor: COLOR_PALETTE.SECONDARY,
             borderColor: COLOR_PALETTE.SECONDARY,
+          },
+        },
+        input: {
+          fontSize: 20,
+        },
+      },
+    },
+
+    MuiPickersCalendarHeader: {
+      styleOverrides: {
+        root: {
+          '& .MuiDayCalendar-weekContainer ,MuiButtonBase-root': {
+            backgroundColor: COLOR_PALETTE.PRIMARY,
+            borderColor: COLOR_PALETTE.PRIMARY,
           },
         },
         input: {
@@ -938,10 +956,26 @@ const customTheme = {
           },
           '& .MuiListItem-root:hover a': {
             color: COLOR_PALETTE.BLACK,
+            backgroundColor: COLOR_PALETTE.LIGHT_GRAY,
           },
         },
         padding: {
           margin: '10px 0',
+        },
+      },
+    },
+    MuiListItem: {
+      styleOverrides: {
+        root: {
+          '&:hover a .MuiSvgIcon-root': {
+            color: COLOR_PALETTE.BLACK,
+            backgroundColor: COLOR_PALETTE.LIGHT_GRAY,
+          },
+          '& .MuiTypography-root.MuiTypography-inherit.MuiLink-root.MuiLink-underlineAlways.MuiTypography-root.MuiTypography-inherit.MuiLink-root.MuiLink-underlineAlways .MuiBox-root':
+            {
+              color: `${COLOR_PALETTE.BLACK} !important`,
+              backgroundColor: COLOR_PALETTE_CHIP.LABEL_MAIN,
+            },
         },
       },
     },
@@ -950,6 +984,9 @@ const customTheme = {
         root: {
           '&.MuiAvatar-circular.MuiAvatar-colorDefault': {
             backgroundColor: COLOR_PALETTE.SECONDARY,
+          },
+          '&.MuiAvatar-circular.MuiAvatar-colorDefault:hover': {
+            backgroundColor: COLOR_PALETTE.BLACK,
           },
         },
       },
@@ -980,6 +1017,7 @@ const customTheme = {
           fontFamily: FONT_PALETTE.PRIMARY,
           '&.Mui-expanded': {
             minHeight: '40px',
+            background: COLOR_PALETTE.LIGHT_GRAY,
           },
         },
         content: {
@@ -993,7 +1031,6 @@ const customTheme = {
           '& .MuiTypography-h4': {
             fontSize: '18px',
           },
-
           '&.Mui-expanded': {
             margin: '12px 0 12px',
             padding: 0,
