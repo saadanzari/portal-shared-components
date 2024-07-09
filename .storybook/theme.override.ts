@@ -10,6 +10,7 @@ import { deepmerge } from '@mui/utils'
 import { theme } from '../src/theme'
 import createPalette from '@mui/material/styles/createPalette'
 import createTypography from '@mui/material/styles/createTypography'
+import { color } from '../src/components/basic/Notifications/PageNotification'
 
 const getFontFamily = (name: string): string =>
   [
@@ -410,9 +411,13 @@ const customTheme = {
             lineHeight: '140%',
             color: `${COLOR_PALETTE.SECONDARY} !important`,
           },
+          '& .MuiCollapse-wrapperInner .MuiPaper-elevation': {
+            background: 'none !important',
+          },
         },
       },
     },
+
     MuiFormControlLabel: {
       styleOverrides: {
         label: {
@@ -757,14 +762,7 @@ const customTheme = {
         },
       ],
     },
-    MuiTab: {
-      styleOverrides: {
-        root: {
-          fontFamily: FONT_PALETTE.PRIMARY,
-          lineHeight: '140%',
-        },
-      },
-    },
+
     MuiDialog: {
       styleOverrides: {
         root: {
@@ -858,6 +856,16 @@ const customTheme = {
           borderRadius: 0,
           '& .MuiTypography-root a': {
             fontSize: 16,
+          },
+        },
+      },
+    },
+    MuiSnackbar: {
+      styleOverrides: {
+        root: {
+          '& .MuiPaper-elevation': {
+            border: 'none !important',
+            boxShadow: '2px 2px 20px 0px rgba(77, 77, 77, 0.25) !important',
           },
         },
       },
@@ -1005,7 +1013,8 @@ const customTheme = {
     MuiCircularProgress: {
       styleOverrides: {
         circle: {
-          color: COLOR_PALETTE.PRIMARY,
+          // to-check
+          // color: COLOR_PALETTE.PRIMARY,
         },
       },
     },
@@ -1055,6 +1064,44 @@ const customTheme = {
           '&.errorBar .iconWithText p': {
             fontSize: '18px',
             fontWeight: '500',
+          },
+        },
+      },
+    },
+    MuiRating: {
+      styleOverrides: {
+        icon: {
+          '& .MuiSvgIcon-root': {
+            color: '#faaf00',
+          },
+        },
+      },
+    },
+
+    MuiTabs: {
+      styleOverrides: {
+        vertical: {
+          color: COLOR_PALETTE.BLACK,
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          fontFamily: FONT_PALETTE.PRIMARY,
+          lineHeight: '140%',
+          fontSize: '16px',
+          '& .MuiSvgIcon-root': {
+            color: COLOR_PALETTE.GRAY,
+            height: '18px',
+            padding: 0,
+            margin: '3px 5px 3px 0',
+          },
+          '&.Mui-selected .MuiSvgIcon-root': {
+            color: `${COLOR_PALETTE.PRIMARY} !important`,
+          },
+          '&:hover': {
+            color: `${COLOR_PALETTE.BLACK} !important`,
           },
         },
       },
