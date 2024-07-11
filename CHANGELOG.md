@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.0.25
+
+- Updated images for markdown files
+
+## 3.0.24
+
+- Imported markdown files(docs) for datepicker, linear progress and dropdown menu to display in storybook
+
 ## 3.0.23
 
 - Improve visibility of scroll to top button
