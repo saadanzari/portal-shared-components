@@ -1,18 +1,15 @@
-import {
-  borderBottom,
-  createTheme,
-  fontSize,
-  height,
-  lineHeight,
-  padding,
-} from '@mui/system'
 import { deepmerge } from '@mui/utils'
 import { theme } from '../src/theme'
 import createPalette from '@mui/material/styles/createPalette'
 import createTypography from '@mui/material/styles/createTypography'
-import { color } from '../src/components/basic/Notifications/PageNotification'
+import {
+  type Theme,
+  createTheme,
+  type ThemeOptions,
+} from '@mui/material/styles'
 
-const getFontFamily = (name: string): string =>
+
+export const getFontFamily = (name: string): string =>
   [
     `"${name}"`,
     '-apple-system',
@@ -23,11 +20,11 @@ const getFontFamily = (name: string): string =>
     'serif',
   ].join(',')
 
-enum FONT_PALETTE {
-  PRIMARY = `"Karbon", Arial, Sans-serif, Serif`,
-  SECONDARY = `"Karbon", Arial, Sans-serif, Serif`,
-  PRIMARY_SEMI_BOLD = `"Karbon", Arial, Sans-serif, Serif`,
-  PRIMARY_LIGHT = `"Karbon", Arial, Sans-serif, Serif`,
+export enum FONT_PALETTE {
+  PRIMARY = '"Karbon", Arial, Sans-serif, Serif',
+  SECONDARY = '"Karbon", Arial, Sans-serif, Serif',
+  PRIMARY_SEMI_BOLD = '"Karbon", Arial, Sans-serif, Serif',
+  PRIMARY_LIGHT = '"Karbon", Arial, Sans-serif, Serif',
 }
 export enum COLOR_PALETTE {
   WHITE = '#ffffff',
@@ -53,14 +50,14 @@ export enum COLOR_PALETTE {
   LIGHT_GRAY = '#F6F6F6',
   BOX_SHADOW = 'rgba(223, 223, 223,1)',
 }
-enum TEXT_PALETTE {
+export enum TEXT_PALETTE {
   PRIMARY = '#111111',
   SECONDARY = '#252525',
   TERTIARY = '#888888',
   QUATERNARY = '#A2A2A2',
 }
 
-enum COLOR_PALETTE_CHIP {
+export enum COLOR_PALETTE_CHIP {
   PENDING_MAIN = '#FFF6E5',
   PENDING_CONTRASTTEXT = '#EA730B',
   CONFIRMED_MAIN = '#DBEBB0',
@@ -72,7 +69,7 @@ enum COLOR_PALETTE_CHIP {
   LABEL_MAIN = '#DFDFDF',
   LABEL_CONTRASTTEXT = '#000000',
 }
-const paletteDefinitions = {
+export const paletteDefinitions = {
   common: {
     white: '#ffffff',
     black: '#000000',
@@ -236,7 +233,7 @@ const paletteDefinitions = {
     yellow: '#f5f9ee',
   },
 }
-const palette = createPalette(paletteDefinitions as any)
+export const palette = createPalette(paletteDefinitions as unknown as Palette)
 
 export const typographyDefinitions = {
   fontWeight: 400,
@@ -377,15 +374,24 @@ export const typographyDefinitions = {
     lineHeight: 24 / 16,
   },
 }
-const typography = createTypography(
-  palette as any,
-  typographyDefinitions as any
+export const typography = createTypography(
+  palette as unknown as Palette,
+  typographyDefinitions as unknown as Typography
 )
 
-const customTheme = {
+export const customTheme = {
   palette,
   typography,
   components: {
+    body: {
+      styleOverrides: {
+        '& .header-section img': {
+          background:
+            'rgba(250, 250, 250, 1) url(/assets/images-cfx/banners/Pattern-Cfx.svg) top right no-repeat',
+          backgroundSize: 'contain',
+        },
+      },
+    },
     MuiTypography: {
       styleOverrides: {
         root: {
@@ -538,6 +544,7 @@ const customTheme = {
         root: {
           '&.Mui-disabled': {
             background: `${COLOR_PALETTE.GRAY} !important`,
+            color: `${COLOR_PALETTE.WHITE} !important`,
           },
         },
       },
@@ -851,6 +858,9 @@ const customTheme = {
           '& .Mui-disabled': {
             color: COLOR_PALETTE.GRAY,
           },
+          '& .MuiDataGrid-cellContent': {
+            fontSize: 16,
+          },
         },
         root: {
           borderRadius: 0,
@@ -1109,5 +1119,5 @@ const customTheme = {
   },
 }
 export const finalTheme = createTheme(
-  deepmerge(theme as any, customTheme as any)
+  deepmerge(theme as Theme, customTheme as ThemeOptions)
 )
